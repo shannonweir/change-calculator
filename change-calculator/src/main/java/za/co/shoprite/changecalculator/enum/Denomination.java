@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public enum RandNotesAndCoins {
+public enum Denomination {
 
     TWO_HUNDRED_RAND("R 200.00", new BigDecimal(200), new BigDecimal(20000)),
     ONE_HUNDRED_RAND("R 100.00", new BigDecimal(100), new BigDecimal(10000)),

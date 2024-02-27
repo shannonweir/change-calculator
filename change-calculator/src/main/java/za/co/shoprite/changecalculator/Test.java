@@ -1,4 +1,4 @@
-package za.co.shoprite.changecalculator.domain;
+package za.co.shoprite.changecalculator;
 
 import java.util.*;
 

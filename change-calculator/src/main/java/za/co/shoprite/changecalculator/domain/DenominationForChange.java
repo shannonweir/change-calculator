@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 //@NoArgsConstructor
 //@Builder
 //@Table(name = "rand_notes_and_coins")
-public class ChangeInNotesAndCoins {
+public class DenominationForChange {
 
     @Id
     private String id;

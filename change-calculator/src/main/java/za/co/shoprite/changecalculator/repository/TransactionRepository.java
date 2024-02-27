@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import za.co.shoprite.changecalculator.domain.Transaction;
 
-@Repository
-public interface CustomerRepository extends JpaRepository<Transaction, Long> {
+//@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, String> {
 }
