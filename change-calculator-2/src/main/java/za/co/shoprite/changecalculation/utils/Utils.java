@@ -1,6 +1,6 @@
-package za.co.shoprite.changecalculator2.utils;
+package za.co.shoprite.changecalculation.utils;
 
-import za.co.shoprite.changecalculator2.enums.Denomination;
+import za.co.shoprite.changecalculation.enums.Denomination;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

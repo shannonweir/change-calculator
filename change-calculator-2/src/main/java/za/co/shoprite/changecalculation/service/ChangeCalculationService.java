@@ -1,13 +1,13 @@
-package za.co.shoprite.changecalculator2.service;
+package za.co.shoprite.changecalculation.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.co.shoprite.changecalculator2.enums.Denomination;
-import za.co.shoprite.changecalculator2.model.TransactionChangeInNotesAndCoins;
-import za.co.shoprite.changecalculator2.model.Transaction;
-import za.co.shoprite.changecalculator2.repository.TransactionRepository;
-import za.co.shoprite.changecalculator2.utils.Utils;
+import za.co.shoprite.changecalculation.enums.Denomination;
+import za.co.shoprite.changecalculation.model.TransactionChangeInNotesAndCoins;
+import za.co.shoprite.changecalculation.model.Transaction;
+import za.co.shoprite.changecalculation.repository.TransactionRepository;
+import za.co.shoprite.changecalculation.utils.Utils;
 
 import java.math.BigDecimal;
 import java.util.Map;

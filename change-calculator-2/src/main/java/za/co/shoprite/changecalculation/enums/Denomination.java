@@ -1,4 +1,4 @@
-package za.co.shoprite.changecalculator2.enums;
+package za.co.shoprite.changecalculation.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

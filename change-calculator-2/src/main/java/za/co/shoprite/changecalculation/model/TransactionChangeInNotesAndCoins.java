@@ -1,4 +1,4 @@
-package za.co.shoprite.changecalculator2.model;
+package za.co.shoprite.changecalculation.model;
 
 import jakarta.persistence.*;
 import lombok.*;
