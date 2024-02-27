@@ -1,0 +1,42 @@
+package za.co.shoprite.changecalculator.services;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import za.co.shoprite.changecalculator.domain.Transaction;
+import za.co.shoprite.changecalculator.repository.TransactionRepository;
+import za.co.shoprite.changecalculator.utils.ChangeCalculationUtils;
+
+import java.math.BigDecimal;
+import java.util.Map;
+
+@Slf4j
+@Service
+public class ChangeCalculationService {
+
+    private final TransactionRepository transactionRepository;
+
+    @Autowired
+    public ChangeCalculationService(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
+
+    public void calculateChange() {
+        BigDecimal sellingPrice = ChangeCalculationUtils.generateRandomBigDecimalInRange(
+                BigDecimal.ONE, new BigDecimal(9990)).divide(new BigDecimal(100));
+        BigDecimal paymentValue = sellingPrice.add(ChangeCalculationUtils.generateRandomBigDecimalInRange(BigDecimal.ONE, new BigDecimal(100)));
+
+        log.info("Selling price:" + sellingPrice);
+        log.info("Payment value:" + paymentValue);
+        BigDecimal change = paymentValue.min(sellingPrice);
+        Map<String, Integer> changeDenominations = ChangeCalculationUtils.getNotesAndCoins(change);
+        changeDenominations.forEach((denomination, count) -> log.info(denomination + ": " + count));
+
+        Transaction transaction = Transaction.builder()
+                .sellingPrice(sellingPrice)
+                .paymentValue(paymentValue)
+                .change(change)
+                .build();
+        transactionRepository.save(transaction);
+    }
+}
